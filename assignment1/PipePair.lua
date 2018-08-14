@@ -10,10 +10,7 @@
 
 PipePair = Class{}
 
--- size of the gap between pipes
-local GAP_HEIGHT = 90
-
-function PipePair:init(y)
+function PipePair:init(y, GAP_HEIGHT)
     -- flag to hold whether this pair has been scored (jumped through)
     self.scored = false
 

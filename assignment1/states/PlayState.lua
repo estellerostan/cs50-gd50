@@ -28,14 +28,14 @@ function PlayState:init()
 end
 
 function PlayState:update(dt)
-    -- size of the gap between pipes
+    -- size of the gap between pipes 
     local GAP_HEIGHT = math.random(0, 4) * 5 + 90
 
     -- update timer for pipe spawning
     self.timer = self.timer + dt
 
-    -- spawn a new pipe pair every second and a half
-    if self.timer > 2 then
+    -- spawn a new pipe pair in a randomized interval of time
+    if self.timer > math.random(0, 10) * 2 + 2 then
         -- modify the last Y coordinate we placed so pipe gaps aren't too far apart
         -- no higher than 10 pixels below the top edge of the screen,
         -- and no lower than a gap length (90 pixels) from the bottom

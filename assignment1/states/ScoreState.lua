@@ -30,6 +30,16 @@ function ScoreState:render()
     love.graphics.setFont(flappyFont)
     love.graphics.printf('Oof! You lost!', 0, 64, VIRTUAL_WIDTH, 'center')
 
+    --medal
+    local medal = love.graphics.newImage('flatshadow_medal2.png')
+    if self.score >= 20 then
+        medal = love.graphics.newImage('flatshadow_medal3.png')
+    elseif self.score >= 100 then
+        medal = love.graphics.newImage('flatshadow_medal4.png')
+    end
+
+    love.graphics.draw(medal, 100, 100)
+
     love.graphics.setFont(mediumFont)
     love.graphics.printf('Score: ' .. tostring(self.score), 0, 100, VIRTUAL_WIDTH, 'center')
 
